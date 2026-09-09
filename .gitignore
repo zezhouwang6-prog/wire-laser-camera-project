@@ -1,0 +1,28 @@
+# Python caches
+__pycache__/
+*.pyc
+*.pyo
+# Editor and virtual environments
+.vscode/
+.idea/
+venv/
+.venv/
+env/
+# Temporary files and archives
+*.tmp
+*.log
+*.zip
+*.rar
+*.7z
+Thumbs.db
+Desktop.ini
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+id_rsa
+id_ed25519
+# Unreferenced generic model; active segmentation model is defined in config.py
+/yolo11n.pt
