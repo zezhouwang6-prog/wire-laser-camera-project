@@ -9,7 +9,7 @@ The current config.py expects PROJECT_ROOT = D:\project. Keep this checkout
 at D:\project\scripts to retain the existing paths without code changes.
 
 The following inputs live outside this repository and are not included:
-- D:\project\model\segment\train_mixed_v3\weights\best.pt: active YOLO segmentation model.
+
 - D:\project\calibration: camera, metric-plane, cone and angle calibration resources.
 - D:\project\runs: acquisition data and generated experimental results.
 
@@ -26,3 +26,12 @@ sources; config.py uses the trained best.pt above. It is retained locally.
 Temporary files, logs, archives, editor settings, virtual environments and
 common credential files are ignored. No blanket image, JSON, YAML, NPZ or
 model extension exclusions are applied. No Git LFS is used.
+
+## Included trained model
+
+models/segment/train_mixed_v3/weights/best.pt is a byte-identical backup of
+D:\project\model\segment\train_mixed_v3\weights\best.pt (6,750,637 bytes).
+On a new machine, copy this file to that external path before running
+segmentation: config.py is unchanged and still reads that external path.
+The original model remains in place. The weight file is stored directly
+in Git without Git LFS. The unused root yolo11n.pt remains excluded.
