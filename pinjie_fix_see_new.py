@@ -1,31 +1,5 @@
 from __future__ import annotations
 
-"""
-RUN20 camera stitch - standalone edition
-=========================================
-
-Purpose
--------
-Reproduce the camera-stitching pipeline used by the verified run20 result,
-without importing pinjie.py.
-
-The important RUN20 order is preserved:
-    1. load source camera frames in capture/image-index order;
-    2. use real camera motor feedback as the global circumferential coordinate;
-    3. use the verified RUN20 camera ROI at a permanently fixed pixel position;
-    4. apply the same cylindrical correction idea as pinjie.py;
-    5. build a visually clean NATURAL stitch with pinjie-style overlap matching:
-           global overlap search -> repair/median smoothing
-           -> local overlap + dx refinement
-           -> full overlap linear blend (aligned-blend)
-    6. only AFTER all visual joins are complete, piecewise-warp the natural
-       stitched image onto the real-encoder metric Y grid;
-    7. save the same diagnostic families used by run20.
-
-This file intentionally has NO `import pinjie` dependency.
-It still uses config.py for the experiment input/output folders, exactly like
-other programs in this project.
-"""
 
 import argparse
 import csv

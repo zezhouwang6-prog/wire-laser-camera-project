@@ -23,8 +23,8 @@ DEFAULT_OUT_DIR = SEGMENTATION_DIR
 # =============================================================================
 TILE_SIZE = 320
 OVERLAP = 0.50
-CONF = 0.25
-EDGE_CONF = 0.5
+CONF = 0.18
+EDGE_CONF = 0.3
 EDGE_MARGIN_RATIO = 0.10
 IOU = 0.80
 MAX_DET = 1000
@@ -33,12 +33,12 @@ IMGSZ = 320
 # Camera stitched-image metric scale.
 PIXEL_SIZE_MM = 0.05473705
 
-MERGE_CENTER_DISTANCE_PX = 10.0
+MERGE_CENTER_DISTANCE_PX = 7.0
 MERGE_CENTER_RADIUS_RATIO = 0.65
 MERGE_OVERLAP_IOU = 0.35
 
-MIN_DIAMETER_PX = 10
-MAX_DIAMETER_PX = 20.0
+MIN_DIAMETER_PX = 6
+MAX_DIAMETER_PX = 18
 RADIUS_SCALE = 1.0
 
 # =============================================================================

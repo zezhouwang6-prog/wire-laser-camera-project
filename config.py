@@ -151,6 +151,58 @@ WIRE_LASER_COVERAGE_HISTOGRAM = (
     WIRE_LASER_ANALYSIS_DIR / "wire_laser_coverage_histogram.png"
 )
 
+
+# ============================================================
+# Laser-only wire-tip geometry analysis paths
+# ============================================================
+# Used by laser_analysis.py / laser_analysis_linked_config.py.
+# The input is the restored physical laser height map generated under
+# LASER_RESTORED_DIR. The analysis output stays inside the same active run.
+LASER_HEIGHT_MAP_NPZ = (
+    LASER_RESTORED_DIR / "laser_height_mm_height_map.npz"
+)
+
+if USE_COMBINED_ACQUISITION:
+    LASER_TIP_ANALYSIS_DIR = (
+        ACTIVE_COMBINED_RUN_DIR / "laser_tip_analysis"
+    )
+else:
+    LASER_TIP_ANALYSIS_DIR = (
+        RUN_DIR / "laser_tip_analysis"
+    )
+
+LASER_TIP_GEOMETRY_CSV = (
+    LASER_TIP_ANALYSIS_DIR / "wire_tip_geometry.csv"
+)
+
+LASER_TIP_GEOMETRY_VALID_CSV = (
+    LASER_TIP_ANALYSIS_DIR / "wire_tip_geometry_valid.csv"
+)
+
+LASER_TIP_INSTANCE_MAP_NPZ = (
+    LASER_TIP_ANALYSIS_DIR / "wire_tip_instance_map.npz"
+)
+
+LASER_TIP_OVERLAY = (
+    LASER_TIP_ANALYSIS_DIR / "wire_tip_overlay.png"
+)
+
+LASER_TIP_DENSITY_CSV = (
+    LASER_TIP_ANALYSIS_DIR / "spatial_density_grid.csv"
+)
+
+LASER_TIP_DENSITY_HEATMAP = (
+    LASER_TIP_ANALYSIS_DIR / "spatial_density_heatmap.png"
+)
+
+LASER_TIP_ANALYSIS_SUMMARY_CSV = (
+    LASER_TIP_ANALYSIS_DIR / "analysis_summary.csv"
+)
+
+LASER_TIP_ANALYSIS_CONFIG_JSON = (
+    LASER_TIP_ANALYSIS_DIR / "analysis_config.json"
+)
+
 # ============================================================
 # Calibration paths
 # ============================================================
@@ -178,6 +230,7 @@ def ensure_dirs() -> None:
         SEGMENTATION_DIR,
         FUSION_DIR,
         WIRE_LASER_ANALYSIS_DIR,
+        LASER_TIP_ANALYSIS_DIR,
         CAMERA_CALIBRATION_DIR,
         CAMERA_CALIBRATION_DIR / "results",
         CONE_CALIBRATION_DIR,

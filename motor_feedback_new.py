@@ -1,24 +1,3 @@
-r"""Standalone shared-zero motor + KEYENCE LJ-X8060 + Basler camera workflow.
-
-This file is the standalone form of the original motor_feedback.py.  It keeps the
-same laser-first / camera-second acquisition logic, but the code previously loaded
-from motor_laser_sync.py and motor_camera.py has been integrated directly here.
-
-It therefore does NOT require these two files:
-    D:\project\scripts\motor_laser_sync.py
-    D:\project\scripts\motor_camera.py
-
-Hardware/SDK dependencies are still required:
-    - control_motor_gsusb.py from the DaMiao motor control package
-    - KEYENCE LJXAwrap.py / LJ-X8000A Python SDK
-    - python-can
-    - numpy
-    - OpenCV (cv2)
-    - pypylon
-
-Outputs default to D:\project\MotorLaserCamera\run1, run2, ... unless
-COMBINED_ACQUISITION_ROOT is available from config.py.
-"""
 
 from __future__ import annotations
 
